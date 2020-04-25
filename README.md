@@ -68,7 +68,15 @@ This can easily be done by listening to the `vermin-success` event instead of th
 
 ## Available configuration
 
-To come soon...
+| Property           | Type     | Default value      | Description                                                           |
+|:------------------ |:-------- |:------------------ |:--------------------------------------------------------------------- |
+| enableHoneypot     | boolean  | true               | Toggles the honeypot technique                                        |
+| enableTimer        | boolean  | true               | Toggles the timer / submission delay technique                        |
+| enableActionSwitch | boolean  | true               | Toggles the action switch technique                                   |
+| actionSwitchAttr   | string   | "data-action"      | Attribute containing the real action for the action switch technique. |
+| honeypotName       | string   | "favorite_address" | Name of the honeypot input                                            |
+| timerDelay         | number   | 2000               | Delay (in ms) before a submission is valid for the timer technique.   |
+| onDeny             | function | null               | Function that handles the error handling for the forms 3 parameters are passed: `(e, reason, errorMessage)`. If none is provided, a default error handling function is used to display the errors.                   |
 
 ## Questions, support and contributions
 
@@ -76,4 +84,4 @@ All contributions to this project are welcomed; simply submit a pull request and
 
 If you have any questions regarding the project, you can send me an email at contact@emileperron.com
 
-If you would like to support me and my projects, such as Vermin.js, you can [buy me a coffee](https://www.buymeacoffee.com/EmilePerron) - I really appreciate it!  You can also thank me on Instagram at @veganguywhocodes - I appreciate that just as much!
+If you would like to support me and my projects, such as Vermin.js, you can [buy me a cup of tea](https://www.buymeacoffee.com/EmilePerron) - I really appreciate it!  You can also send me a message on Instagram at @veganguywhocodes - I appreciate that just as much!
