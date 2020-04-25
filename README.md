@@ -66,7 +66,17 @@ However, if you are handling your form submissions with Javascript, you need to 
 
 This can easily be done by listening to the `vermin-success` event instead of the `submit` event on your form. This event is triggered whenever a form submission that isn't considered as spam is made.
 
-## Available configuration
+## Configuration
+
+A configuration object can be passed to the `Vermin.init()` method. Ex.:
+
+```js
+Vermin.init({
+  timerDelay: 1000
+});
+```
+
+Here are the properties that are accepted for that configuration object.
 
 | Property           | Type     | Default value      | Description                                                           |
 |:------------------ |:-------- |:------------------ |:--------------------------------------------------------------------- |
