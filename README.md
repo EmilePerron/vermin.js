@@ -1,7 +1,8 @@
-# vermin.js
+# Vermin.js: Eliminate form submission spam on your websites
 
 Vermin is a simple script that helps you prevent spam in your website's forms.
-It does so by implementing some of the most well known non-intrusive spam prevention techniques for you.
+
+It does so by implementing three of the most well known non-intrusive client-side spam prevention techniques for you.
 
 ## Getting started
 
@@ -10,14 +11,14 @@ Getting started with Vermin is a simple as including the script and calling the 
 If you want to get started right away without toying with the available configurations, simply include the following snippet to your website:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js/src/vermin.min.js"></script>
-<script>
-  Vermin.init();
-</script>
+<script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0/src/vermin.min.js"></script>
+<script>Vermin.init();</script>
 <noscript>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js/src/vermin-noscript.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0/src/vermin-noscript.css">
 </noscript>
 ```
+
+However, the most powerful of the three techniques that Vermin implements requires a small adjustment to your forms. Read more about this in the Action Switching section.
 
 ## How it works
 
