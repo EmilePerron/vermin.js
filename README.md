@@ -11,10 +11,10 @@ Getting started with Vermin is a simple as including the script and calling the 
 If you want to get started right away without toying with the available configurations, simply include the following snippet to your website:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.1/src/vermin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.2/src/vermin.min.js"></script>
 <script>Vermin.init();</script>
 <noscript>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.1/src/vermin-noscript.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.2/src/vermin-noscript.css">
 </noscript>
 ```
 
@@ -24,7 +24,7 @@ However, the most powerful of the three techniques that Vermin implements requir
 
 There three main techniques at play in Vermin's form submission screening:
 - Honeypot input
-- Timer / submission delay
+- Timer / submission delay
 - Action switching
 
 Each of these techniques can be enabled or disabled by passing the appropriate parameter in the configuration when initializing Vermin. However, as you might expect, the highest level of spam prevention requires all three to be enabled.
@@ -33,7 +33,7 @@ Let's look a how each one of these work:
 
 ### Honeypot input
 
-When Vermin is initialized, a fake input is added to all of your forms. That fake input is hidden from view via CSS, so your regular users won't see it or interact with it.  However, robots will often fill every input with no regards to their visibility. 
+When Vermin is initialized, a fake input is added to all of your forms. That fake input is hidden from view via CSS, so your regular users won't see it or interact with it.  However, robots will often fill every input with no regards to their visibility.
 
 When your form is submitted, Vermin will check if that fake input has been filled, and will deny the submission if it is.
 
@@ -41,7 +41,7 @@ When your form is submitted, Vermin will check if that fake input has been fille
 
 Humans tend to spend some time on a page before they fill and submit a form. Robots usually don't: more often than not, they fill your form automatically and submit it in just a few milliseconds.
 
-When your form is submitted, Vermin will check how long ago the page was loaded, and will deny the submission if it's been less than the defined delay - 2000ms by default. 
+When your form is submitted, Vermin will check how long ago the page was loaded, and will deny the submission if it's been less than the defined delay - 2000ms by default.
 
 In the unlikely event that one of your visitors were to fill and submit the form within that delay, a clear error message will them to wait a few seconds and to submit it again.
 
@@ -59,9 +59,9 @@ Here is an example:
 <form action="/bogus-url" data-action="submit.php">
 ```
 
-## Working with AJAX 
+## Working with AJAX
 
-The basic spam prevention that Vermin implements works by simply calling `e.preventDefault()` on the submit event whenever a form submission is considered as spam. 
+The basic spam prevention that Vermin implements works by simply calling `e.preventDefault()` on the submit event whenever a form submission is considered as spam.
 
 However, if you are handling your form submissions with Javascript, you need to know when a form submission is sent, but only when it is not spam.
 

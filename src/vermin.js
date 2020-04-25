@@ -79,9 +79,9 @@
                             }
                             break;
                     }
-                }
 
-                Vermin.config[key] = config[key];
+                    Vermin.config[key] = config[key];
+                }
             }
 
             Vermin.apply();
