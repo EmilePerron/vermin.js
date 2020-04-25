@@ -12,9 +12,7 @@ If you want to get started right away without toying with the available configur
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0/src/vermin.min.js"></script>
-<script>
-  Vermin.init();
-</script>
+<script>Vermin.init();</script>
 <noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0/src/vermin-noscript.css">
 </noscript>
