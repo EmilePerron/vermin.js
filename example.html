@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Vermin.js Example</title>
+        <style>
+            html, body { padding: 0; margin: 0; font-family: Helvetica, Arial, sans-serif; color: #222; background-color: #f1f1f1; }
+            form { width: 350px; max-width: 95%; padding: 30px; margin: 60px auto; background-color: white; border-radius: 3px; }
+            h1 { margin: 0; margin-bottom: 30px; font-size: 24px; text-align: center; }
+            label { display: block; margin-bottom: 20px; font-size: 14px; }
+            input, select, textarea { display: block; width: 100%; padding: 6px 12px; margin-top: 3px; font-size: 14px; line-height: 1.5; border: 1px solid #eee; border-radius: 3px; outline: none; resize: vertical; }
+            input:focus, select:focus, textarea:focus { border-color: #6ab9dc; }
+            button { display: block; width: 150px; padding: 8px 16px; margin: auto; margin-top: 30px; font-size: 14px; line-height: 1.5; font-weight: 600; color: white; background-color: #6ab9dc; border: none; border-radius: 3px; cursor: pointer; }
+            button:hover { background-color: #3992b9; }
+        </style>
+    </head>
+    <body>
+        <form action="/null" data-action="example.html">
+            <h1>My Signup Form</h1>
+
+            <label>
+                Your name <span style="color:red">*</span>
+                <input type="text" name="name" placeholder="Name" required>
+            </label>
+
+            <label>
+                Your email
+                <input type="email" name="email" placeholder="Email">
+            </label>
+
+            <label>
+                Where did you hear about us?
+                <select name="reference">
+                    <option value="" selected disabled>Select one...</option>
+                    <option value="online">Online</option>
+                    <option value="other">Somewhere else</option>
+                </select>
+            </label>
+
+            <label>
+                Tell us about yourself
+                <textarea name="about"></textarea>
+            </label>
+
+            <button type="submit">Sign up</button>
+        </form>
+
+        <script src="src/vermin.js"></script>
+        <script>
+            Vermin.init();
+        </script>
+        <noscript>
+            <link rel="stylesheet" href="src/vermin-noscript.css">
+        </noscript>
+
+        <script>
+            if (window.location.href.indexOf('name=') != -1) {
+                alert('Congrats, your account has been created!');
+            }
+        </script>
+    </body>
+</html>
