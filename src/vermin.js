@@ -179,6 +179,4 @@
             console[type]("[Vermin.js] " + Vermin.sprintf(template, parameters) + ' For more information, please refer to the documentation: https://github.com/EmilePerron/vermin.js');
         }
     };
-
-    Vermin.init();
 })();
