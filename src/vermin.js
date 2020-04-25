@@ -103,8 +103,11 @@
 
             if (['input', 'textarea', 'select'].indexOf(e.target.tagName.toLowerCase()) != -1) {
                 var form = e.target.closest('form');
-                form.setAttribute('action', form.getAttribute(Vermin.config.actionSwitchAttr));
-                form.removeEventListener('focus', Vermin.actionSwitchListener);
+
+                if (form.hasAttribute(Vermin.config.actionSwitchAttr)) {
+                    form.setAttribute('action', form.getAttribute(Vermin.config.actionSwitchAttr));
+                    form.removeEventListener('focus', Vermin.actionSwitchListener);
+                }
             }
         },
         insertHoneypot: function(form) {
@@ -116,7 +119,7 @@
                 return Vermin.deny(e, 'timer');
             }
 
-            if (Vermin.config.enableActionSwitch && e.target.getAttribute('action') != e.target.getAttribute(Vermin.config.actionSwitchAttr)) {
+            if (Vermin.config.enableActionSwitch && e.target.hasAttribute(Vermin.config.actionSwitchAttr) && e.target.getAttribute('action') != e.target.getAttribute(Vermin.config.actionSwitchAttr)) {
                 return Vermin.deny(e, 'actionSwitch');
             }
 
@@ -128,7 +131,7 @@
                 honeypotField.parentNode.removeChild(honeypotField);
             }
 
-            e.target.dispatchEvent(new CustomEvent('vermin-success'));
+            e.target.dispatchEvent(new CustomEvent('vermin-success', { detail: { event: e }}));
         },
         deny: function(e, reason) {
             e.preventDefault();
