@@ -123,11 +123,11 @@
                 return Vermin.deny(e, 'actionSwitch');
             }
 
-            if (Vermin.config.enableHoneypot && e.target.querySelector(Vermin.sprintf('input[name="%s"]', [Vermin.config.honeypotName])).value.length) {
+            var honeypotField = e.target.querySelector(Vermin.sprintf('input[name="%s"]', [Vermin.config.honeypotName]));
+            if (Vermin.config.enableHoneypot && honeypotField && honeypotField.value.length) {
                 return Vermin.deny(e, 'honeypot');
             } else {
                 // If the honeypot validation has been passed once, it'll be passed again. Remove the field to prevent useless data in the form submission payload
-                var honeypotField = e.target.querySelector(Vermin.sprintf('input[name="%s"]', [Vermin.config.honeypotName]));
                 honeypotField.parentNode.removeChild(honeypotField);
             }
 

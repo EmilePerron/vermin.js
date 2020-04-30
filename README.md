@@ -11,10 +11,10 @@ Getting started with Vermin is a simple as including the script and calling the 
 If you want to get started right away without toying with the available configurations, simply include the following snippet to your website:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.2/src/vermin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.3/src/vermin.min.js"></script>
 <script>Vermin.init();</script>
 <noscript>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.2/src/vermin-noscript.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/EmilePerron/vermin.js@1.0.3/src/vermin-noscript.css">
 </noscript>
 ```
 
