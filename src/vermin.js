@@ -126,7 +126,7 @@
             var honeypotField = e.target.querySelector(Vermin.sprintf('input[name="%s"]', [Vermin.config.honeypotName]));
             if (Vermin.config.enableHoneypot && honeypotField && honeypotField.value.length) {
                 return Vermin.deny(e, 'honeypot');
-            } else {
+            } else if (honeypotField) {
                 // If the honeypot validation has been passed once, it'll be passed again. Remove the field to prevent useless data in the form submission payload
                 honeypotField.parentNode.removeChild(honeypotField);
             }
