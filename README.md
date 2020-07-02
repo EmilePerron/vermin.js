@@ -65,7 +65,7 @@ The basic spam prevention that Vermin implements works by simply calling `e.prev
 
 However, if you are handling your form submissions with Javascript, you need to know when a form submission is sent, but only when it is not spam.
 
-This can easily be done by listening to the `vermin-success` event instead of the `submit` event on your form. This event is triggered whenever a form submission that isn't considered as spam is made.
+This can easily be done by listening to the `vermin-success` event instead of the `submit` event on your form. This event is triggered whenever a form submission that isn't considered as spam is made. When doing so, you can find the original submit event in `e.detail.event`.
 
 ## Configuration
 
